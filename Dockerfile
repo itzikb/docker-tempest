@@ -9,6 +9,8 @@ RUN dnf -y install python-devel \
     && mkdir -p /etc/tempest
 
 RUN echo "fedora ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+ADD run_tempest.sh /home/fedora
+RUN chmod 755 /home/fedora/run_tempest.sh && chown fedora:fedora /home/fedora/run_tempest.sh                                                                                                                       
 
 USER fedora
 WORKDIR /home/fedora
@@ -19,5 +21,3 @@ RUN virtualenv redhat-tempest && cd redhat-tempest \
 RUN pwd && virtualenv tempest-upstream && cd tempest-upstream && source bin/activate \
     && git clone https://github.com/openstack/tempest.git && cd tempest && pip install -e . 
 WORKDIR /home/fedora/tempest-upstream/tempest
-ADD run_tempest.sh /home/fedora
-#RUN chown fedora:fedora /home/fedora/run_tempest.sh && chmod +x /home/fedora/run_tempest.sh 

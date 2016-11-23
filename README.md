@@ -16,7 +16,7 @@ Inside the container run
 $ ~/run_tempest.sh
 $ source ../bin/activate
 $ testr list-tests
-
+```
 **itzikb/docker-tempest** is the docker image to use (don't change)
 **keystonerc_admin** is a file consists of OpenStack authentication environment files.
 ```
@@ -26,8 +26,4 @@ OS_AUTH_URL=http://192.168.100.1:5000/v2.0
 PS1=[\u@\h \W(keystone_admin)]\$
 OS_TENANT_NAME=admin
 OS_REGION_NAME=RegionOne
-
-
-```
-
 ```

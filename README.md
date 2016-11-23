@@ -17,7 +17,7 @@ $ ~/run_tempest.sh
 $ source ../bin/activate
 $ testr list-tests
 ```
-**itzikb/docker-tempest** is the docker image to use (don't change)
+**itzikb/docker-tempest** is the docker image to use (don't change)  
 **keystonerc_admin** is a file consists of OpenStack authentication environment files.
 ```
 OS_USERNAME=admin

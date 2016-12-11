@@ -22,5 +22,9 @@ RUN pwd && virtualenv tempest-upstream && cd tempest-upstream && source bin/acti
     && git clone https://github.com/openstack/tempest.git && cd tempest && pip install -e . \ 
     && pip install -r test-requirements.txt && cd .. && git clone https://github.com/openstack/neutron.git \
     && cd neutron && pip install -e . && pip install -r test-requirements.txt                                                                                                                                      
+
+RUN cd /home/fedora/tempest-upstream && source bin/activate && git clone https://github.com/openstack/neutron-lbaas.git \
+    && cd neutron-lbaas && pip install -e . && pip install -r test-requirements.txt
 WORKDIR /home/fedora/tempest-upstream/tempest
+
 

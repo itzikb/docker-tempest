@@ -23,7 +23,7 @@ RUN pwd && virtualenv tempest-upstream && cd tempest-upstream \
     && git clone https://github.com/openstack/tempest.git && cd tempest \
     && pip install -U pip python-subunit \
     && pip install -U setuptools && pip install -e . \ 
-    && pip install -r test-requirements.txt && cd .. \
+    && pip install -r test-requirements.txt && testr init && cd .. \
     && git clone https://github.com/openstack/neutron.git \
     && cd neutron && pip install -e . && pip install -r test-requirements.txt                                                                                                                                      
 

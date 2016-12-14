@@ -20,7 +20,7 @@ $ testr list-tests
 **itzikb/docker-tempest** is the docker image to use (don't change)  
 **keystonerc_admin** is a file consists of OpenStack authentication environment files.
 
-**Note: Use the following as an example. Don't use export in you file**
+**Note: Use the following as an example. Don't use the word export in your file as used by the shell**
 ```
 OS_USERNAME=admin
 OS_PASSWORD=mypassword

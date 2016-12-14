@@ -4,7 +4,11 @@ It meant to make it easy to configure and run tempest against an existing cloud.
 Docker should be installed and running.
 To install it run(Fedora):
 ```
-$ sudo dnf -y install docker && sudo systemctl start docker
+$ sudo dnf -y install docker && sudo systemctl start docker && systemctl enable docker
+```
+or For other RHEL based distros:
+```
+$ sudo yum -y install docker && sudo systemctl start docker && systemctl enable docker
 ```
 
 To use it run the following:

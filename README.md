@@ -33,3 +33,8 @@ PS1=[\u@\h \W(keystone_admin)]\$
 OS_TENANT_NAME=admin
 OS_REGION_NAME=RegionOne
 ```
+
+You can access the container by running
+```
+$ sudo docker exec -it <container-name> /bin/bash
+```

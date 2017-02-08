@@ -38,3 +38,7 @@ You can access the container by running
 ```
 $ sudo docker exec -it <container-name> /bin/bash
 ```
+You can see all the containers by running
+```
+$ sudo docker ps -a 
+```

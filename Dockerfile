@@ -14,7 +14,7 @@ USER centos
 WORKDIR /home/centos
 RUN virtualenv redhat-tempest && cd redhat-tempest \
     && source bin/activate \
-    && git clone https://github.com/redhat-openstack/tempest ; cd tempest \
+    && git clone https://github.com/redhat-openstack/python-tempestconf.git ; cd python-tempestconf \
     && pip install -U pip python-subunit && pip install -U setuptools  \
     && pip install requests && pip install -r requirements.txt 
 
@@ -32,4 +32,5 @@ RUN cd /home/centos/tempest-upstream && source bin/activate \
     && cd neutron-lbaas && pip install -e . \
     && pip install -r test-requirements.txt
 WORKDIR /home/centos/tempest-upstream/tempest
+VOLUME /env
 CMD ['/bin/bash']

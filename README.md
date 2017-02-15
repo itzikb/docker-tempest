@@ -22,6 +22,13 @@ To use it run the following (Here overcloudrc file is under /home/stack):
 ```
 $ sudo docker run -it --name mytempest -v /home/stack:/env itzikb/docker-tempest /bin/bash
 ```
+
+If you need to run the other_tempest_config.sh script (for now just adding lbaasv2 extenstion) run as follows:
+
+```
+$ sudo docker run -it --name mytempest -e OTHER_CONFIG=/home/centos/scripts/other_tempest_config.sh -v /home/stack:/env itzikb/docker-tempest  /bin/bash
+```
+
 Inside the container run
 ```
 $ ~/run_tempest.sh

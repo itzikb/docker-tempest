@@ -11,9 +11,16 @@ or For other RHEL based distros:
 $ sudo yum -y install docker && sudo systemctl start docker && sudo systemctl enable docker
 ```
 
-To use it run the following:
+Before running you need to have a directory with overcloudrc file and set the SELinux file context. 
+
+For example:
 ```
-$ sudo docker run -it --name mytempest --env-file=keystonerc_admin itzikb/docker-tempest /bin/bash
+$ sudo chcon -Rt svirt_sandbox_file_t /home/stack
+```
+
+To use it run the following (Here overcloudrc file is under /home/stack):
+```
+$ sudo docker run -it --name mytempest -v /home/stack:/env itzikb/docker-tempest /bin/bash
 ```
 Inside the container run
 ```

@@ -6,9 +6,9 @@ RUN yum -y install python-devel sshpass gcc git libffi-devel \
 RUN yum -y update && mkdir -p /etc/tempest
 
 RUN echo "centos ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-ADD run_tempest.sh /home/centos
-RUN chmod 755 /home/centos/run_tempest.sh \
-    && chown centos:centos /home/centos/run_tempest.sh
+ADD scripts /home/centos/scripts
+RUN chmod 755 -R /home/centos/scripts \
+    && chown centos:centos /home/centos/scripts
 
 USER centos
 WORKDIR /home/centos
@@ -32,5 +32,5 @@ RUN cd /home/centos/tempest-upstream && source bin/activate \
     && cd neutron-lbaas && pip install -e . \
     && pip install -r test-requirements.txt
 WORKDIR /home/centos/tempest-upstream/tempest
-VOLUME /env
 CMD ['/bin/bash']
+

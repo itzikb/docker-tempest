@@ -31,7 +31,7 @@ $ sudo docker run -it --name mytempest -e OTHER_CONFIG=/home/centos/scripts/othe
 
 Inside the container run
 ```
-$ ~/run_tempest.sh
+$ sudo ~/scripts/run_tempest.sh
 $ source ../bin/activate
 $ testr list-tests
 ```

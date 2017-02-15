@@ -13,5 +13,8 @@ cd /home/centos/redhat-tempest/python-tempestconf
 source ../bin/activate
 python config_tempest/config_tempest.py identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD --create
 sudo cp etc/tempest.conf /etc/tempest
+if [ "${OTHER_CONFIG}" ]; then
+  bash ${OTHER_CONFIG}
+fi
 cd /home/centos/tempest-upstream/tempest
 source ../bin/activate

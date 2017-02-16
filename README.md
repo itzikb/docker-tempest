@@ -25,7 +25,7 @@ $ sudo chcon -Rt svirt_sandbox_file_t /home/stack
 
 To use it run the following (Here overcloudrc file is under /home/stack):
 ```
-$ sudo docker run -it --name mytempest -v /home/stack:/env o4gtcUbVSe4N6QYw /bin/bash
+$ sudo docker run -it --name mytempest -v /home/stack:/env /bin/bash
 ```
 
 If you need to run the other_tempest_config.sh script (for now just adding lbaasv2 extenstion) run as follows:

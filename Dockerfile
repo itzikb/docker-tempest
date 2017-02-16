@@ -2,7 +2,8 @@ FROM centos:7
 RUN useradd -ms /bin/bash centos
 RUN yum -y install python-devel sshpass gcc git libffi-devel \
     libxml2-devel libxslt-devel  mariadb-devel openssl-devel  python-pip \
-    python-virtualenv  redhat-rpm-config sudo iputils
+    python-virtualenv  redhat-rpm-config sudo iputils wget \
+    vim 
 RUN yum -y update && mkdir -p /etc/tempest
 
 RUN echo "centos ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
@@ -32,5 +33,6 @@ RUN cd /home/centos/tempest-upstream && source bin/activate \
     && cd neutron-lbaas && pip install -e . \
     && pip install -r test-requirements.txt
 WORKDIR /home/centos/tempest-upstream/tempest
+RUN wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img -P etc
 CMD ['/bin/bash']
 

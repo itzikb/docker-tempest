@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo chmod 755 -R /home/stack
 source /env/overcloudrc
 DS_REPO_TEMPEST=/home/centos/redhat-tempest/python-tempestconf
 US_REPO_TEMPEST=/home/centos/tempest-upstream/tempest

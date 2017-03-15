@@ -19,7 +19,7 @@ RUN virtualenv redhat-tempest && cd redhat-tempest \
     && pip install -U pip python-subunit && pip install -U setuptools  \
     && pip install requests && pip install -r requirements.txt 
 
-RUN pwd && virtualenv tempest-upstream && cd tempest-upstream \
+RUN virtualenv tempest-upstream && cd tempest-upstream \
     && source bin/activate \
     && git clone https://github.com/openstack/tempest.git && cd tempest \
     && pip install -U pip python-subunit \

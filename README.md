@@ -20,13 +20,14 @@ Before running you need to have a directory with overcloudrc file and set the SE
 
 For example:
 ```
-$ sudo chcon -Rt svirt_sandbox_file_t /home/stack
+$ sudo chcon -Rt svirt_sandbox_file_t /home/stack/authdir
 ```
 
-To use it run the following (Here overcloudrc file is under /home/stack):
+To use it run the following (Here overcloudrc file is under /home/stack/authdir):
 ```
-$ sudo docker run -it --name mytempest -v /home/stack:/env itzikb/docker-tempest  /bin/bash
+$ sudo docker run -it --name mytempest -v /home/stack/authdir:/env itzikb/docker-tempest  /bin/bash
 ```
+**Note: Don't use the /home/stack directory as it may result in an unexpected behavior**
 
 If you need to run the other_tempest_config.sh script (for now just adding lbaasv2 extenstion) run as follows:
 

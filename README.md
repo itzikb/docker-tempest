@@ -20,8 +20,8 @@ Before running you need to have a directory with overcloudrc file and set the SE
 
 For example:
 ```
-$ mkdir /home/stack/overcloudrc /home/stack/authdir
-$ cp /home/stack/overcloudrc 
+$ mkdir /home/stack/authdir
+$ cp /home/stack/overcloudrc /home/stack/authdir
 $ sudo chcon -Rt svirt_sandbox_file_t /home/stack/authdir
 ```
 

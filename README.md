@@ -54,3 +54,8 @@ You can see all the containers by running
 ```
 $ sudo docker ps -a 
 ```
+
+## Troubleshooting
+After Redployment tests are complaining about connections timeout
+Make sure you either run a new container or copy over the overcloudrc to the directory you use (e.g. authdir) and run the ~/scripts/run_tempest.sh script
+

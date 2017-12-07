@@ -3,7 +3,7 @@ sudo chmod +rx /env
 source /env/overcloudrc
 DS_REPO_TEMPEST=/home/centos/redhat-tempest/python-tempestconf
 US_REPO_TEMPEST=/home/centos/tempest-upstream/tempest
-US_REPO_NEUTRON=/home/centos/tempest-upstream/neutron
+US_REPO_NEUTRON=/home/centos/tempest-upstream/neutron-tempest-plugin
 US_REPO_LBAAS=/home/centos/tempest-upstream/neutron-lbaas
 
 for i in ${DS_REPO_TEMPEST} ${US_REPO_TEMPEST} ${US_REPO_NEUTRON} ${US_REPO_LBAAS};do

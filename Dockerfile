@@ -13,17 +13,13 @@ RUN chmod 755 -R /home/centos/scripts \
 
 USER centos
 WORKDIR /home/centos
-RUN virtualenv redhat-tempest && cd redhat-tempest \
-    && source bin/activate \
-    && git clone https://github.com/redhat-openstack/python-tempestconf.git ; cd python-tempestconf \
-    && pip install -U pip python-subunit && pip install -U setuptools  \
-    && pip install requests && pip install -r requirements.txt 
-
 RUN virtualenv tempest-upstream && cd tempest-upstream \
     && source bin/activate \
+    && git clone https://github.com/openstack/python-tempestconf.git ; cd python-tempestconf \
+    && pip install -U pip python-subunit && pip install -U setuptools  \
+    && pip install requests && pip install -r requirements.txt \
+    && cd .. \
     && git clone https://github.com/openstack/tempest.git && cd tempest \
-    && pip install -U pip python-subunit \
-    && pip install -U setuptools && pip install -e . \ 
     && pip install -r test-requirements.txt && testr init \ 
     && pip install ipdb && cd .. \
     && git clone https://github.com/openstack/neutron-tempest-plugin.git \
@@ -36,4 +32,3 @@ RUN cd /home/centos/tempest-upstream && source bin/activate \
 WORKDIR /home/centos/tempest-upstream/tempest
 RUN wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img -P etc
 CMD ['/bin/bash']
-

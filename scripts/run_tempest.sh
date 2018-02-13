@@ -14,7 +14,7 @@ source ../bin/activate
 
 pushd ${DS_REPO_TEMPEST}
 git checkout 1.1.3 -b 1.1.3
-pip intall -e .
+pip install -e .
 python config_tempest/config_tempest.py identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD DEFAULT.use_stderr true identity.region regionOne validation.run_validation True --create
 sudo cp etc/tempest.conf /etc/tempest
 if [ "${OTHER_CONFIG}" ]; then

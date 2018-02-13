@@ -6,9 +6,13 @@ US_REPO_TEMPEST=/home/centos/tempest-upstream/tempest
 US_REPO_NEUTRON=/home/centos/tempest-upstream/neutron-tempest-plugin
 US_REPO_LBAAS=/home/centos/tempest-upstream/neutron-lbaas
 
-for i in ${DS_REPO_TEMPEST} ${US_REPO_TEMPEST} ${US_REPO_NEUTRON} ${US_REPO_LBAAS};do
-    git checkout master && git pull
+for i in ${US_REPO_TEMPEST} ${US_REPO_NEUTRON} ${US_REPO_LBAAS};do
+    pushd && git checkout master && git pull && popd
 done
+
+pushd ${DS_REPO_TEMPEST}
+git checkout 1.1.3
+popd
 
 cd /home/centos/tempest-upstream/python-tempestconf
 source ../bin/activate

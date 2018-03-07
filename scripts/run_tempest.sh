@@ -1,6 +1,7 @@
 #!/bin/bash
 sudo chmod +rx /env
 source /env/overcloudrc
+export OS_AUTH_URL=$(echo $OS_AUTH_URL | sed 's/v2.0/v3/')
 DS_REPO_TEMPEST=/home/centos/tempest-upstream/python-tempestconf
 US_REPO_TEMPEST=/home/centos/tempest-upstream/tempest
 US_REPO_NEUTRON=/home/centos/tempest-upstream/neutron-tempest-plugin

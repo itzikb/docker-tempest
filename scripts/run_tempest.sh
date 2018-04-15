@@ -1,5 +1,6 @@
 #!/bin/bash
 sudo chmod +rx /env
+sudo sed -i 's/v2.*/v3/g' /env/overcloudrc
 source /env/overcloudrc
 DS_REPO_TEMPEST=/home/centos/tempset-upstream/python-tempestconf
 US_REPO_TEMPEST=/home/centos/tempest-upstream/tempest
@@ -12,7 +13,7 @@ done
 
 cd /home/centos/tempest-upstream/python-tempestconf
 source ../bin/activate
-python config_tempest/tempest_conf.py identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD DEFAULT.use_stderr true identity.region regionOne validation.run_validation True --create
+python config_tempest/main.py identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD DEFAULT.use_stderr true identity.region regionOne validation.run_validation True --create
 sudo cp etc/tempest.conf /etc/tempest
 if [ "${OTHER_CONFIG}" ]; then
   bash ${OTHER_CONFIG}

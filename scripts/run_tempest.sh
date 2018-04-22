@@ -13,6 +13,9 @@ done
 
 cd /home/centos/tempest-upstream/python-tempestconf
 source ../bin/activate
+# Temporary because failing with the last commit of python-tempestconf
+git checkout c1951c379e226f1ee4ea537408c166379d7808ad
+
 python config_tempest/main.py identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD DEFAULT.use_stderr true identity.region regionOne validation.run_validation True --create
 sudo cp etc/tempest.conf /etc/tempest
 if [ "${OTHER_CONFIG}" ]; then

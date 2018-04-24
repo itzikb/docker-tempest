@@ -23,4 +23,4 @@ if [ "${OTHER_CONFIG}" ]; then
 fi
 cd /home/centos/tempest-upstream/tempest
 source ../bin/activate
-stestr init
+pip install os-testr

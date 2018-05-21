@@ -23,12 +23,20 @@ RUN virtualenv tempest-upstream && cd tempest-upstream \
     && pip install -r test-requirements.txt && testr init \ 
     && pip install ipdb && cd .. \
     && git clone https://github.com/openstack/neutron-tempest-plugin.git \
-    && cd neutron-tempest-plugin && pip install -e . && pip install -r test-requirements.txt                                                                                                                                      
+    && cd neutron-tempest-plugin && pip install -e . && pip install -r test-requirements.txt
+
 
 RUN cd /home/centos/tempest-upstream && source bin/activate \
     && git clone https://github.com/openstack/neutron-lbaas.git \
     && cd neutron-lbaas && pip install -e . \
     && pip install -r test-requirements.txt
+
+RUN cd /home/centos/tempest-upstream && source bin/activate \
+    && git clone https://github.com/openstack/octavia-tempest-plugin.git \
+    && cd octavia-tempest-plugin && pip install -e . \
+    && pip install -r test-requirements.txt
+    && pip install crudini
+    
 WORKDIR /home/centos/tempest-upstream/tempest
 RUN wget http://download.cirros-cloud.net/0.3.1/cirros-0.3.1-x86_64-disk.img -P etc
 CMD ['/bin/bash']

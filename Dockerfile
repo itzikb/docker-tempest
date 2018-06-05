@@ -25,7 +25,6 @@ RUN virtualenv tempest-upstream && cd tempest-upstream \
     && git clone https://github.com/openstack/neutron-tempest-plugin.git \
     && cd neutron-tempest-plugin && pip install -e . && pip install -r test-requirements.txt
 
-
 RUN cd /home/centos/tempest-upstream && source bin/activate \
     && git clone https://github.com/openstack/neutron-lbaas.git \
     && cd neutron-lbaas && pip install -e . \

@@ -41,7 +41,7 @@ Inside the container run
 ```
 $ sudo ~/scripts/run_tempest.sh
 $ source ../bin/activate
-$ stestr -l
+$ stestr list
 ```
 **itzikb/docker-tempest** is the docker image to use (don't change)  
 

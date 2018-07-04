@@ -26,4 +26,3 @@ if [ "${OTHER_CONFIG}" ]; then
 fi
 cd /home/centos/tempest-upstream/tempest
 source ../bin/activate
-pip install stestr && stestr init

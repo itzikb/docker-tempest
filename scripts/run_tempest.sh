@@ -1,7 +1,9 @@
 #!/bin/bash
 sudo chmod +rx /env
-sudo sed -i 's/v2.*/v3/g' /env/overcloudrc
-source /env/overcloudrc
+sudo cp /env/overcloudrc ~
+sudo chown centos ~/overcloudrc
+sudo sed -i 's/v2.*/v3/g' ~/overcloudrc
+source ~/overcloudrc
 DS_REPO_TEMPEST=/home/centos/tempset-upstream/python-tempestconf
 US_REPO_TEMPEST=/home/centos/tempest-upstream/tempest
 US_REPO_NEUTRON=/home/centos/tempest-upstream/neutron-tempest-plugin

@@ -1,9 +1,9 @@
 #!/bin/bash
-sudo chmod +rx /env
-sudo cp /env/overcloudrc ~
-sudo chown centos ~/overcloudrc
-sudo sed -i 's/v2.*/v3/g' ~/overcloudrc
-source ~/overcloudrc
+sudo cp /env/overcloudrc /home/centos
+sudo chmod +rx /home/centos/overcloudrc
+sudo chown centos /home/centos/overcloudrc
+sudo sed -i 's/v2.*/v3/g' /home/centos/overcloudrc
+source /home/centos/overcloudrc
 DS_REPO_TEMPEST=/home/centos/tempset-upstream/python-tempestconf
 US_REPO_TEMPEST=/home/centos/tempest-upstream/tempest
 US_REPO_NEUTRON=/home/centos/tempest-upstream/neutron-tempest-plugin
@@ -26,4 +26,4 @@ if [ "${OTHER_CONFIG}" ]; then
 fi
 cd /home/centos/tempest-upstream/tempest
 source ../bin/activate
-pip install os-testr
+pip install stestr && stestr init

@@ -1,4 +1,5 @@
 FROM centos:7
+# dummy
 RUN useradd -ms /bin/bash centos
 RUN yum -y install python-devel sshpass gcc git libffi-devel \
     libxml2-devel libxslt-devel  mariadb-devel openssl-devel  python-pip \

@@ -1,0 +1,7 @@
+services:
+  - docker
+
+install:
+  - docker build -t itzikb/docker-tempest .
+script:
+  - exit 0

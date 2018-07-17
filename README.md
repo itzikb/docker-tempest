@@ -1,4 +1,5 @@
 # docker-tempest
+[![Build Status](https://travis-ci.org/itzikb/docker-tempest.svg?branch=master)](https://travis-ci.org/itzikb/docker-tempest)  
 It meant to make it easy to configure and run tempest against an existing cloud.
 
 **Note:** If you already have the image use the following to get the latest build

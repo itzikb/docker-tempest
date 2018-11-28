@@ -1,4 +1,5 @@
 # docker-tempest
+[![Build Status](https://travis-ci.org/itzikb/docker-tempest.svg?branch=master)](https://travis-ci.org/itzikb/docker-tempest)  
 It meant to make it easy to configure and run tempest against an existing cloud.
 
 **Note:** If you already have the image use the following to get the latest build
@@ -27,14 +28,14 @@ $ sudo chcon -Rt svirt_sandbox_file_t /home/stack/authdir
 
 To use it run the following (Here overcloudrc file is under /home/stack/authdir):
 ```
-$ sudo docker run -it --name mytempest -v /home/stack/authdir:/env itzikb/docker-tempest  /bin/bash
+$ sudo docker run -it --name mytempest --network host -v /home/stack/authdir:/env itzikb/docker-tempest  /bin/bash
 ```
 **Note: Don't use the /home/stack directory as it may result in an unexpected behavior**
 
 If you need to run the other_tempest_config.sh script (for now just adding lbaasv2 extenstion) run as follows:
 
 ```
-$ sudo docker run -it --name mytempest -e OTHER_CONFIG=/home/centos/scripts/other_tempest_config.sh -v /home/stack:/env itzikb/docker-tempest  /bin/bash
+$ sudo docker run -it --name mytempest --network host -e OTHER_CONFIG=/home/centos/scripts/other_tempest_config.sh -v /home/stack:/env itzikb/docker-tempest  /bin/bash
 ```
 
 Inside the container run

@@ -20,10 +20,11 @@ RUN virtualenv tempest-upstream && cd tempest-upstream \
     && pip install requests && pip install -r requirements.txt \
     && cd .. \
     && git clone https://github.com/openstack/tempest.git && cd tempest \
-    && pip install -r test-requirements.txt && testr init \ 
-    && pip install ipdb && cd .. \
+    && pip install -r test-requirements.txt \ 
+    && pip install ipdb python-openstackclient && cd .. \
     && git clone https://github.com/openstack/neutron-tempest-plugin.git \
-    && cd neutron-tempest-plugin && pip install -e . && pip install -r test-requirements.txt
+    && cd neutron-tempest-plugin && pip install -e . && pip install -r test-requirements.txt \
+    && pip install stestr && stestr init && pip install os-testr
 
 
 RUN cd /home/centos/tempest-upstream && source bin/activate \

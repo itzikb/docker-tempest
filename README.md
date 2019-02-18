@@ -40,6 +40,7 @@ $ sudo docker run -it --name mytempest --network host -e OTHER_CONFIG=/home/cent
 
 Inside the container run
 ```
+$ cd ~/tempest-upstream/tempest
 $ sudo ~/scripts/run_tempest.sh
 $ source ../bin/activate
 $ ostestr -l

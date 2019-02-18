@@ -13,6 +13,8 @@ done
 
 cd /home/centos/tempest-upstream/python-tempestconf
 source ../bin/activate
+# Temporary because failing with the last commit of python-tempestconf
+git checkout c1951c379e226f1ee4ea537408c166379d7808ad
 
 python config_tempest/main.py identity.uri $OS_AUTH_URL identity.admin_password $OS_PASSWORD DEFAULT.use_stderr true identity.region regionOne validation.run_validation True load_balancer.enable_security_groups True load_balancer.member_role _member_ load_balancer.admin_role admin load_balancer.RBAC_test_type owner_or_admin --create
 sudo cp etc/tempest.conf /etc/tempest

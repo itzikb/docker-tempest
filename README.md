@@ -25,10 +25,18 @@ $ mkdir /home/stack/authdir
 $ cp /home/stack/overcloudrc /home/stack/authdir
 $ sudo chcon -Rt svirt_sandbox_file_t /home/stack/authdir
 ```
-
+Currently there are multiple images for different plugins:
+1. **tempest-only** itzikb/docker-tempest  
 To use it run the following (Here overcloudrc file is under /home/stack/authdir):
 ```
-$ sudo docker run -it --name mytempest --network host -v /home/stack/authdir:/env itzikb/docker-tempest  /bin/bash
+$ sudo docker run -it --name mytempest --network host -v /home/stack/authdir:/env itzikb/docker-tempest  /bin/bash 
+```
+2. **tempest+ironic plugin** itzikb/docker-tempest-ironic  
+To use it run the following (Here overcloudrc file is under /home/stack/authdir):
+```
+$ sudo docker run -it --name mytempest --network host -v /home/stack/authdir:/env itzikb/docker-tempest-ironic  /bin/bash 
+
+
 ```
 **Note: Don't use the /home/stack directory as it may result in an unexpected behavior**
 
@@ -37,6 +45,7 @@ If you need to run the other_tempest_config.sh script (for now just adding lbaas
 ```
 $ sudo docker run -it --name mytempest --network host -e OTHER_CONFIG=/home/centos/scripts/other_tempest_config.sh -v /home/stack:/env itzikb/docker-tempest  /bin/bash
 ```
+**Note:** If you are using a different image (such as docker-tempest-ironic) replace itzikb/docker-tempest with the correct image  
 
 Inside the container run
 ```

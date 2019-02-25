@@ -4,6 +4,7 @@ It's meant to make it easy to configure and run tempest against an existing clou
 
 **Note** This image contains tempest tests. There are other images as well:
 * [tempest+ironic plugin](https://github.com/itzikb/docker-tempest-ironic)
+* [tempest+neutron plugin](https://github.com/itzikb/docker-tempest-neutron)
 
 **Note:** If you already have the image use the following to get the latest build
 ```
